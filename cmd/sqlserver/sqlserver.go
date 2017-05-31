@@ -145,7 +145,6 @@ func (s *SqlServer) Run(migration io.Reader) error {
 }
 
 func (s *SqlServer) SetVersion(version int, dirty bool) error {
-	fmt.Println("setversion")
 	tx, err := s.db.Begin()
 	if err != nil {
 		return &database.Error{OrigErr: err, Err: "transaction start failed"}
